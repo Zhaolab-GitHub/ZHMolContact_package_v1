@@ -118,7 +118,8 @@ environment installed above. Domain outputs are saved to
 
 ### Data Files
 
-The following directories contain the datasets, examples, and trained model required to evaluate and run ZHMolContact:
+The following directories contain the dataset, and trained model required to evaluate and run ZHMolContact.
+Both resources are available for download from the Zenodo repository (https://zenodo.org/records/24053811).
 
 - `Data/`: Data required to reproduce the evaluation results on the FoldBench test set.
 - `trained_model/`: Trained ZHMolContact model weights.
