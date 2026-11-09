@@ -1,0 +1,9 @@
+{
+    "work_dir": "example/aaRS_tRNA",
+    "project_name": "aaRS_tRNA",
+    "RNA_fasta_file": "example/aaRS_tRNA/aaRS_tRNA_RNA.fa",
+    "prot_fasta_file": "example/aaRS_tRNA/aaRS_tRNA_protein.fa",
+    "RNA_pdb_file": "example/aaRS_tRNA/aaRS_tRNA_RNA.pdb",
+    "prot_pdb_file": "example/aaRS_tRNA/aaRS_tRNA_protein.pdb",
+    "model_path": "trained_model/model.pth"
+}

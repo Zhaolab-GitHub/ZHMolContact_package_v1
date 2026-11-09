@@ -1,0 +1,95 @@
+[build-system]
+requires = [
+    "setuptools==77.0.1",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "zhmolcontact"
+version = "0.1.0"
+description = "Prediction of RNA-protein residue-nucleotide contacts and binding sites"
+readme = "README.MD"
+requires-python = ">=3.9,<3.10"
+
+dependencies = [
+    # Scientific computing
+    "numpy==1.26.4",
+    "pandas==2.2.3",
+    "scipy==1.10.1",
+    "scikit-learn>=1.2,<2",
+    "biopython==1.83",
+    "tqdm==4.66.2",
+    "lifelines==0.30.0",
+    "palettable==3.3.3",
+    "seaborn==0.13.2",
+
+    # Structural biology
+    "freesasa==2.2.1",
+    "scikit-image==0.24.0",
+
+    # Protein/RNA language models
+    "fair-esm==2.0.0",
+    "rna-fm==0.2.2",
+    "ptflops==0.6.9",
+    "mxfold2==0.1.2",
+
+    # Model-weight downloads
+    "huggingface_hub>=0.20,<1.0",
+]
+
+[project.optional-dependencies]
+notebook = [
+    "jupyter==1.0.0",
+    "matplotlib==3.9.4",
+    "fastjsonschema==2.19.1",
+]
+
+# Only the CUDA 11.8 installation is supported.
+# Explicit CUDA build tags prevent installed CPU wheels from satisfying
+# these requirements. Supply the PyTorch index and PyG wheel page when
+# installing with the cu118 extra.
+cu118 = [
+    "torch==2.0.0+cu118",
+    "torchvision==0.15.1+cu118",
+    "torchaudio==2.0.1+cu118",
+    "torch-geometric==2.1.0",
+    "torch-scatter==2.1.1+pt20cu118",
+    "torch-sparse==0.6.17+pt20cu118",
+    "torch-cluster==1.6.1+pt20cu118",
+]
+
+
+[project.scripts]
+zhmolcontact = "ZHMolContact_predict:main"
+
+
+[tool.setuptools]
+py-modules = [
+    "ZHMolContact_predict",
+]
+include-package-data = true
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["*.tests", "*.tests.*", "*.ipynb_checkpoints", "*.ipynb_checkpoints.*", "*.__pycache__"]
+include = [
+    "models",
+    "models.*",
+    "utils",
+    "utils.*",
+    "trained_model",
+    "trained_model.*",
+]
+
+
+[tool.setuptools.package-data]
+trained_model = [
+    "*.pth",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

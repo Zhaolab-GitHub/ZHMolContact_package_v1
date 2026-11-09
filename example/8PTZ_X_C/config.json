@@ -1,0 +1,9 @@
+{
+    "work_dir": "example/8PTZ_X_C",
+    "project_name": "8PTZ_X_C",
+    "RNA_fasta_file": "example/8PTZ_X_C/8PTZ_X_C_RNA.fa",
+    "prot_fasta_file": "example/8PTZ_X_C/8PTZ_X_C_protein.fa",
+    "RNA_pdb_file": "example/8PTZ_X_C/8PTZ_X_C_RNA.pdb",
+    "prot_pdb_file": "example/8PTZ_X_C/8PTZ_X_C_protein.pdb",
+    "model_path": "trained_model/model.pth"
+}
